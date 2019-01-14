@@ -1,5 +1,5 @@
 #include<string.h>
-#define MYNULL = -1;
+#define MYNULL -1;
 
 struct node {
 	int data;
@@ -7,13 +7,13 @@ struct node {
 	int valid;
 };
 
-typedef struct node Node;
+//typedef struct node Node;
 
-int get_node(Node *);
-void release_node(Node *, int);
-void init(Node *);
-int add(Node *, int);
-void print(Node *);
-int delete(Node *, int);
-int search(Node *, int);
+int get_node(struct node *);
+void release_node(struct node *, int);
+void init(struct node *);
+int add(struct node *, int);
+void print(struct node *);
+int delete(struct node *, int);
+int search(struct node *, int);
 
