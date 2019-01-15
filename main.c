@@ -28,11 +28,11 @@ int main(void){
 		sscanf(buffer, "%s" "%d", userLetter, &userNum);
 		//if "i" (number) insert number
 		if (strcmp(userLetter, "i") == 0){
-			printf("You want to insert number %d\n", userNum);
+			add(list, userNum);
 		}
 		//If "p" print list
 		else if (strcmp(userLetter, "p") == 0){
-			printf("You want to print!\n");
+			print(list);
 		} 
 		//If "s" (number) search for number
 		else if (strcmp(userLetter, "s") == 0){

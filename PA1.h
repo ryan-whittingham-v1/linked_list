@@ -1,5 +1,5 @@
 #include<string.h>
-#define MYNULL -1;
+#define MYNULL -1
 
 struct node {
 	int data;

@@ -8,8 +8,8 @@ void init(struct node *ll){
         int i;
         for(i=1; i<100; i++){
                 ll[i].valid=0;
-                ll[i].data=999;
-                ll[i].next=-99999;
+                ll[i].data=0;
+                ll[i].next=MYNULL;
         }
 }
 
