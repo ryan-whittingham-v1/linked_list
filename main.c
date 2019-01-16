@@ -25,37 +25,38 @@ int main(void){
 		printf(">");
 		//Capture user input
 		fgets(buffer, 100, stdin);
-		sscanf(buffer, "%s" "%d", userLetter, &userNum);
-		//if "i" (number) insert number
-		if (strcmp(userLetter, "i") == 0){
-			add(list, userNum);
+		int ret=sscanf(buffer, "%s" "%d", userLetter, &userNum);
+		if(ret==2){//If two valid arguments given
+			//if "i" (number) insert number
+			if (strcmp(userLetter, "i") == 0){
+				add(list, userNum);
+			} 
+			//If "s" (number) search for number
+			else if (strcmp(userLetter, "s") == 0){
+				printf("You want to search for number %d\n", userNum);
+			} 
+			//If "d" (number) delete number
+			else if (strcmp(userLetter, "d") == 0){
+				delete(list, userNum);
+			}
+			//Else display options
+			else{
+				showOptions();
+			}
 		}
-		//If "p" print list
-		else if (strcmp(userLetter, "p") == 0){
-			print(list);
-		} 
-		//If "s" (number) search for number
-		else if (strcmp(userLetter, "s") == 0){
-			printf("You want to search for number %d\n", userNum);
-		} 
-		//If "d" (number) delete number
-		else if (strcmp(userLetter, "d") == 0){
-			printf("You want to delete number %d\n", userNum);
+		else if(ret==1){//If 1 valid argument given
+			if(strcmp(userLetter,"x")==0){//If "x" exit
+				return 0;
+			}
+			else if (strcmp(userLetter,"p")==0){//If "p" print
+				print(list);
+			}
+			else{
+				showOptions();
+			}
 		}
-		//If "x" exit
-		else if (strcmp(userLetter, "x") == 0){
-			return 0;
-		}
-		//Else display options
-		else{
-			printf("\nOptions\n");
-			printf("-------------------------------\n");
-			printf("p  print list\n");
-			printf("i (number) - to insert number to list \n");
-			printf("s (number) - to search list for number \n");
-			printf("d (number) - to delete number from list \n");
-			printf("x - close list \n");
-			printf("-------------------------------\n");
+		else{//Display options if ret != 2
+			showOptions();
 		} 
 	}
 	return 0;
