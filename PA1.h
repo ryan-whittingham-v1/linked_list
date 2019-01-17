@@ -9,12 +9,12 @@ struct node {
 
 //typedef struct node Node;
 
-int get_node(struct node *);
-void release_node(struct node *, int);
 void init(struct node *);
 int add(struct node *, int);
 void print(struct node *);
 int delete(struct node *, int);
 int search(struct node *, int);
 void showOptions(void);
+int get_node(struct node *);
+void release_node(struct node *, int);
 

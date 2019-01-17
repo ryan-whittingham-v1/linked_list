@@ -2,23 +2,16 @@
 #include"PA1.h"
 
 void print(struct node *ll){
-	int nextNode=0;
-	printf("\nLIST\n");
-	printf("----\n");
-/*	
-	int i=0;
-	while(i<100){
-		printf("Item %d data:%d points to:%d valid:%d\n", i, ll[i].data, ll[i].next, ll[i].valid);
-		i++;
-	}
-*/
-	if(ll[nextNode].next == MYNULL){
-		printf("(EMPTY)\n");
+	printf("\nTHE LIST\n");
+	printf("--------\n");
+	int nodeIndex=ll[0].next;//Set nodeIndex to first node
+	if(nodeIndex==MYNULL){//If first node is the end of the list
+		printf("EMPTY\n");
 	}	
-	while(ll[nextNode].next != MYNULL){
-		nextNode=ll[nextNode].next;
-		printf("%d\n", ll[nextNode].data);
+	while(nodeIndex != MYNULL){//While not the end of the list
+		printf("%d\n", ll[nodeIndex].data);
+		nodeIndex=ll[nodeIndex].next;//Move to next node in list
 	}
-	
+	printf("--------\n\n");
 }
 

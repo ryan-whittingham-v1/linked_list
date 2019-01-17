@@ -25,7 +25,7 @@ int main(void){
 		printf(">");
 		//Capture user input
 		fgets(buffer, 100, stdin);
-		int ret=sscanf(buffer, "%s" "%d", userLetter, &userNum);
+		int ret=sscanf(buffer, "%s" "%9d", userLetter, &userNum);
 		if(ret==2){//If two valid arguments given
 			//if "i" (number) insert number
 			if (strcmp(userLetter, "i") == 0){
@@ -33,7 +33,7 @@ int main(void){
 			} 
 			//If "s" (number) search for number
 			else if (strcmp(userLetter, "s") == 0){
-				printf("You want to search for number %d\n", userNum);
+				search(list, userNum);
 			} 
 			//If "d" (number) delete number
 			else if (strcmp(userLetter, "d") == 0){
