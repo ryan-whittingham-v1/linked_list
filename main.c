@@ -19,7 +19,6 @@ int main(void){
 	int userNum;
 
 	init(list);
-
 	while(1 == 1){
 		//Display prompt for user input
 		printf(">");

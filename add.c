@@ -32,6 +32,7 @@ int add(struct node *ll, int nodeData){
 			else{
 				ll[newNode].next=nodeIndex;//new node points to index that failed while loop
 				ll[currentNode].next=newNode;//prior node that satisfied while loop points to new node
+				printf("SUCCESS\n\n");
 				return 1;
 			}
 		}
